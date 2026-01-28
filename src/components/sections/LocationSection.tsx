@@ -46,7 +46,7 @@ const LocationSection = ({ location }: LocationSectionProps) => {
           <div className="relative order-2 lg:order-1">
             <div className="aspect-square rounded-lg overflow-hidden bg-muted">
               <img
-                src="/assets/units/we8-1.png"
+                src="/assets/units/we8-1.jpg"
                 alt="Außenvisualisierung Gartenresidenz am Denkmal"
                 className="w-full h-full object-cover"
               />
