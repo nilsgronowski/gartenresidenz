@@ -40,9 +40,17 @@ const ContactSection = ({ company }: ContactSectionProps) => {
     setIsSubmitting(true);
 
     try {
-      // TODO: E-Mail Versand konfigurieren (z.B. /api/contact oder externer Mail-Dienst)
-      console.log("Form submitted:", formData);
-      await new Promise(resolve => setTimeout(resolve, 800));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("send_failed");
+      }
 
       toast({
         title: "Anfrage gesendet",

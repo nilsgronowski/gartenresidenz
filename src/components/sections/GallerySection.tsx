@@ -3,37 +3,137 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const galleryImages = [
+  // Außenvisualisierungen
   {
-    src: "/assets/units/we7-1.jpeg",
-    alt: "Außenansicht Gartenresidenz am Denkmal",
+    src: "/assets/gallery/01.2 Außenvisualisierung Banner ohne Nachbarhaus.jpg",
+    alt: "Außenansicht Banner",
     caption: "Außenvisualisierung Rheinlage",
   },
   {
-    src: "/assets/units/we1-1.jpg",
-    alt: "Wohnbereich WE 01",
-    caption: "Wohnbereich mit Gartenbezug",
+    src: "/assets/gallery/02 Außenvisualisierung.png",
+    alt: "Außenvisualisierung 2",
+    caption: "Straßenansicht",
   },
   {
-    src: "/assets/units/we1-2.png",
-    alt: "Detail Innenraum WE 01",
-    caption: "Helle Materialien und klare Linien",
+    src: "/assets/gallery/03 Außenvisualisierung.png",
+    alt: "Außenvisualisierung 3",
+    caption: "Gartenperspektive",
   },
   {
-    src: "/assets/units/we2-1.png",
-    alt: "Wohnküche WE 02",
-    caption: "Offene Wohnküche mit viel Licht",
+    src: "/assets/gallery/04 Außenvisualisierung.jpg",
+    alt: "Außenvisualisierung 4",
+    caption: "Gesamtansicht",
+  },
+  // Innenvisualisierungen
+  {
+    src: "/assets/gallery/04 Whg 01 DUNKEL.jpg",
+    alt: "Wohnung 1 Wohnbereich",
+    caption: "WE 01 Wohnbereich",
   },
   {
-    src: "/assets/units/we4-1.png",
-    alt: "Wohnzimmer WE 04",
-    caption: "Großzügiger Wohn-/Essbereich",
+    src: "/assets/gallery/01 Whg 2.png",
+    alt: "Wohnung 2 Wohnbereich",
+    caption: "WE 02 Wohnbereich",
   },
   {
-    src: "/assets/units/we6-1.png",
-    alt: "Innenraum WE 06",
-    caption: "Bodentiefe Fenster und Grünblick",
+    src: "/assets/gallery/02 Whg 2.png",
+    alt: "Wohnung 2 Wohnbereich",
+    caption: "WE 02 Wohnbereich",
+  },
+  {
+    src: "/assets/gallery/03 Whg 3.png",
+    alt: "Wohnung 3 - Wohnbereich",
+    caption: "WE 03 · 1. OG",
+  },
+  {
+    src: "/assets/gallery/04 Whg 4.png",
+    alt: "Wohnung 4 - Wohnzimmer",
+    caption: "WE 04 · Großzügiger Wohnbereich",
+  },
+  {
+    src: "/assets/gallery/05 Whg 4.png",
+    alt: "Wohnung 4 - Schlafzimmer",
+    caption: "WE 04 · Schlafzimmer",
+  },
+  {
+    src: "/assets/gallery/06 Whg 4.png",
+    alt: "Wohnung 4 - Badezimmer",
+    caption: "WE 04 · Badezimmer",
+  },
+  {
+    src: "/assets/gallery/07 Whg 6.png",
+    alt: "Wohnung 6 - Maisonette",
+    caption: "WE 06 · Maisonette Wohnbereich",
+  },
+  {
+    src: "/assets/gallery/08 Whg 6.png",
+    alt: "Wohnung 6 - Schlafzimmer",
+    caption: "WE 06 · Schlafzimmer",
+  },
+  {
+    src: "/assets/gallery/09 Whg 6.png",
+    alt: "Wohnung 6 - Badezimmer",
+    caption: "WE 06 · Badezimmer",
+  },
+  {
+    src: "/assets/gallery/10 Whg 6.png",
+    alt: "Wohnung 6 - Dachgeschoss",
+    caption: "WE 06 · Dachgeschoss",
+  },
+  {
+    src: "/assets/gallery/11 Whg 6.png",
+    alt: "Wohnung 6 - Badezimmer",
+    caption: "WE 06 · Badezimmer",
+  },
+  {
+    src: "/assets/gallery/12 Whg 1 Denkmalschutz.png",
+    alt: "Wohnung 1 Denkmal - Wohnbereich",
+    caption: "WE 07 · Denkmal Wohnbereich",
+  },
+  {
+    src: "/assets/gallery/13 Whg 1 Denkmalschutz.png",
+    alt: "Wohnung 1 Denkmal - Wohnbereich",
+    caption: "WE 07 · Wohnbereich",
+  },
+  {
+    src: "/assets/gallery/14 Whg 1 Denkmalschutz.png",
+    alt: "Wohnung 1 Denkmal - Wohnbereich",
+    caption: "WE 07 · Wohnbereich",
+  },
+  {
+    src: "/assets/gallery/15 Whg 1 Denkmalschutz.png",
+    alt: "Wohnung 1 Denkmal - Arbeitszimmer",
+    caption: "WE 07 · Arbeitszimmer",
+  },
+  {
+    src: "/assets/gallery/16 Whg 2 Denkmalschutz.png",
+    alt: "Wohnung 2 Denkmal - Dachgeschoss",
+    caption: "WE 08 · Denkmal Dachgeschoss",
+  },
+  {
+    src: "/assets/gallery/17 Whg 2 Denkmalschutz.png",
+    alt: "Wohnung 2 Denkmal - Küche",
+    caption: "WE 08 · Küche",
+  },
+  {
+    src: "/assets/gallery/18 Whg 2 Denkmalschutz.png",
+    alt: "Wohnung 2 Denkmal - Wohnbereich",
+    caption: "WE 08 · Wohnbereich",
+  },
+  {
+    src: "/assets/gallery/19 Tiefgarage.jpg",
+    alt: "Tiefgarage",
+    caption: "Tiefgarage",
+  },
+  {
+    src: "/assets/gallery/20 Tiefgarage.jpg",
+    alt: "Tiefgarage Ansicht",
+    caption: "Tiefgarage Ansicht",
   },
 ];
+
+// Preview images (first 6 - best exterior and interior shots)
+const previewImages = galleryImages.slice(0, 6);
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -73,9 +173,9 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Preview (first 6 images) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {galleryImages.map((image, index) => (
+          {previewImages.map((image, index) => (
             <div
               key={index}
               className="group relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer"
@@ -94,6 +194,17 @@ const GallerySection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Button to view all images in lightbox */}
+        <div className="text-center mt-12">
+          <button
+            onClick={() => openLightbox(0)}
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-md font-body transition-colors"
+          >
+            Alle {galleryImages.length} Konzeptbilder ansehen
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
 

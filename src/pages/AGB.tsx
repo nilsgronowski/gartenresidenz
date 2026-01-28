@@ -1,6 +1,16 @@
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+
 const AGB = () => (
   <main className="min-h-screen bg-background text-foreground">
-    <div className="container mx-auto px-6 py-16 max-w-4xl space-y-10">
+    <div className="container mx-auto px-6 py-16 max-w-4xl space-y-8">
+      <Link 
+        to="/" 
+        className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Zurück zur Startseite
+      </Link>
       <h1 className="font-display text-4xl">Allgemeine Geschäftsbedingungen</h1>
 
       <p className="font-body text-muted-foreground">
