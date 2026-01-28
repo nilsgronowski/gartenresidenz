@@ -17,7 +17,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: 'Garten / EG',
     features: ['Terrasse', 'Gartenanteil', '2 Badezimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we1-1.jpg', '/assets/units/we1-2.png']
+    images: ['/assets/units/we1-1.jpg', '/assets/units/we1-2.jpg']
   },
   {
     id: 'WE-02',
@@ -28,7 +28,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: 'Garten / EG',
     features: ['Terrasse', 'Große Wohnküche', '2 Badezimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we2-1.png', '/assets/units/we2-2.png']
+    images: ['/assets/units/we2-1.jpg', '/assets/units/we2-2.jpg']
   },
   {
     id: 'WE-03',
@@ -39,7 +39,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: '1. OG',
     features: ['Balkon', '2 Badezimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we3-1.png']
+    images: ['/assets/units/we3-1.jpg']
   },
   {
     id: 'WE-04',
@@ -50,7 +50,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: '1. OG',
     features: ['Balkon', 'Großer Wohnbereich', '2 Badezimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we4-1.png', '/assets/units/we4-2.png']
+    images: ['/assets/units/we4-1.jpg', '/assets/units/we4-2.jpg']
   },
   {
     id: 'WE-05',
@@ -61,7 +61,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: '2. OG / DG',
     features: ['Balkon', '2 Badezimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we5-1.png']
+    images: ['/assets/units/we5-1.jpg']
   },
   {
     id: 'WE-06',
@@ -72,7 +72,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: '2. OG / DG',
     features: ['Balkon', '2 Badezimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we6-1.png', '/assets/units/we6-2.png']
+    images: ['/assets/units/we6-1.jpg', '/assets/units/we6-2.jpg']
   },
   {
     id: 'WE-07',
@@ -83,7 +83,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: 'EG Denkmal',
     features: ['3 Schlafzimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we7-1.jpeg']
+    images: ['/assets/units/we7-1.jpg']
   },
   {
     id: 'WE-08',
@@ -94,7 +94,7 @@ export const realEstateObjects: RealEstateObject[] = [
     floor: '1. OG / DG Denkmal',
     features: ['2 Badezimmer', 'Tiefgarage vorhanden'],
     status: 'available',
-    images: ['/assets/units/we8-1.png']
+    images: ['/assets/units/we8-1.jpg']
   }
 ];
 
