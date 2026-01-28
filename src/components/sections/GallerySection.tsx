@@ -4,34 +4,34 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    alt: "Moderne Fassade",
-    caption: "Zeitlose Architektur",
+    src: "/assets/units/we7-1.jpeg",
+    alt: "Außenansicht Gartenresidenz am Denkmal",
+    caption: "Außenvisualisierung Rheinlage",
   },
   {
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    alt: "Wohnbereich",
-    caption: "Lichtdurchflutete Räume",
+    src: "/assets/units/we1-1.jpg",
+    alt: "Wohnbereich WE 01",
+    caption: "Wohnbereich mit Gartenbezug",
   },
   {
-    src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    alt: "Küche",
-    caption: "Hochwertige Küchen",
+    src: "/assets/units/we1-2.png",
+    alt: "Detail Innenraum WE 01",
+    caption: "Helle Materialien und klare Linien",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    alt: "Badezimmer",
-    caption: "Elegante Bäder",
+    src: "/assets/units/we2-1.png",
+    alt: "Wohnküche WE 02",
+    caption: "Offene Wohnküche mit viel Licht",
   },
   {
-    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    alt: "Terrasse",
-    caption: "Private Außenbereiche",
+    src: "/assets/units/we4-1.png",
+    alt: "Wohnzimmer WE 04",
+    caption: "Großzügiger Wohn-/Essbereich",
   },
   {
-    src: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    alt: "Schlafzimmer",
-    caption: "Ruhige Schlafzimmer",
+    src: "/assets/units/we6-1.png",
+    alt: "Innenraum WE 06",
+    caption: "Bodentiefe Fenster und Grünblick",
   },
 ];
 

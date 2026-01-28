@@ -1,39 +1,43 @@
 import { MapPin, Train, ShoppingBag, Trees, GraduationCap, Coffee } from "lucide-react";
 
+interface LocationSectionProps {
+  location: string;
+}
+
 const locationFeatures = [
   {
+    icon: MapPin,
+    title: "Rheinnähe",
+    description: "Wenige Minuten zu den Rheinauen in Meerbusch-Büderich",
+  },
+  {
     icon: Train,
-    title: "Öffentliche Anbindung",
-    description: "U-Bahn Böhmerwaldplatz in 5 Gehminuten",
+    title: "ÖPNV",
+    description: "U76 Richtung Düsseldorf und Krefeld in kurzer Distanz",
   },
   {
     icon: ShoppingBag,
-    title: "Einkaufsmöglichkeiten",
-    description: "Arabellapark Shopping Center 10 Min. entfernt",
-  },
-  {
-    icon: Trees,
-    title: "Naherholung",
-    description: "Direkter Zugang zum Englischen Garten",
+    title: "Einkaufen",
+    description: "Zentrum Büderich & Düsseldorf-Oberkassel schnell erreichbar",
   },
   {
     icon: GraduationCap,
-    title: "Bildungseinrichtungen",
-    description: "Internationale Schulen in der Umgebung",
+    title: "Schulen",
+    description: "Kitas, Grund- und weiterführende Schulen im nahen Umfeld",
   },
   {
     icon: Coffee,
     title: "Gastronomie",
-    description: "Ausgewählte Restaurants und Cafés fußläufig",
+    description: "Cafés und Restaurants in Büderich, Lörick und Oberkassel",
   },
   {
-    icon: MapPin,
-    title: "Stadtzentrum",
-    description: "Marienplatz in 15 Minuten erreichbar",
+    icon: Trees,
+    title: "Erholung",
+    description: "Parks, Rheinwiesen und Sportangebote fuß- oder radläufig",
   },
 ];
 
-const LocationSection = () => {
+const LocationSection = ({ location }: LocationSectionProps) => {
   return (
     <section id="location" className="py-24 bg-sand-light">
       <div className="container mx-auto px-6">
@@ -42,8 +46,8 @@ const LocationSection = () => {
           <div className="relative order-2 lg:order-1">
             <div className="aspect-square rounded-lg overflow-hidden bg-muted">
               <img
-                src="https://images.unsplash.com/photo-1599946347371-68eb71b16afc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="München Bogenhausen Luftaufnahme"
+                src="/assets/units/we8-1.png"
+                alt="Außenvisualisierung Gartenresidenz am Denkmal"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -53,11 +57,10 @@ const LocationSection = () => {
                 <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-display text-xl text-foreground">
-                    Residenz am Parkblick
+                    Gartenresidenz am Denkmal
                   </h4>
                   <p className="font-body text-muted-foreground mt-1">
-                    Ismaninger Straße 142<br />
-                    81675 München-Bogenhausen
+                    {location}
                   </p>
                 </div>
               </div>
@@ -71,15 +74,14 @@ const LocationSection = () => {
                 Die Lage
               </span>
               <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 leading-tight">
-                München-Bogenhausen:<br />
-                <span className="italic">Leben im Grünen</span>
+                Meerbusch-Büderich:<br />
+                <span className="italic">Am Rhein zuhause</span>
               </h2>
             </div>
 
             <p className="font-body text-muted-foreground leading-relaxed text-lg">
-              Bogenhausen gehört zu den exklusivsten Wohnvierteln Münchens. 
-              Die Kombination aus grüner Parklandschaft, hervorragender Infrastruktur 
-              und der Nähe zur Innenstadt macht diesen Standort einzigartig.
+              Ruhige Lage zwischen Rheinauen und Düsseldorf: kurze Wege in die Innenstadt, 
+              gewachsene Nachbarschaft in Büderich und viel Grün direkt vor der Tür.
             </p>
 
             {/* Location Features Grid */}

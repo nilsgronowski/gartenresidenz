@@ -1,4 +1,10 @@
-const AboutSection = () => {
+import type { Project } from "@/types";
+
+interface AboutSectionProps {
+  project: Project;
+}
+
+const AboutSection = ({ project }: AboutSectionProps) => {
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -10,43 +16,39 @@ const AboutSection = () => {
                 Das Projekt
               </span>
               <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 leading-tight">
-                Architektur, die <br />
-                <span className="italic">Lebensqualität</span> schafft
+                Wohnen zwischen <br />
+                <span className="italic">Garten und Geschichte</span>
               </h2>
             </div>
 
             <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
               <p>
-                Die Residenz am Parkblick vereint zeitgenössische Architektur mit der 
-                Wärme eines echten Zuhauses. Jede der zwölf Eigentumswohnungen wurde 
-                mit Bedacht auf Licht, Raum und Lebensqualität entworfen.
+                Die Gartenresidenz am Denkmal vereint historische Substanz mit moderner Wohnqualität. 
+                Acht Eigentumswohnungen mit großzügigen Grundrissen öffnen sich zu Gärten und Terrassen.
               </p>
               <p>
-                Großzügige Fensterfronten öffnen den Blick auf die grüne Parklandschaft, 
-                während hochwertige Naturmaterialien im Inneren eine Atmosphäre der 
-                Geborgenheit schaffen. Die durchdachten Grundrisse bieten Flexibilität 
-                für unterschiedliche Lebenssituationen.
+                Innen sorgen helle Räume, bodentiefe Fenster und hochwertige Materialien für eine ruhige, 
+                zeitlose Atmosphäre. Außen rahmen viel Grün und die Nähe zum Rhein das Ensemble.
               </p>
               <p>
-                Von der Planung bis zur Fertigstellung steht eines im Mittelpunkt: 
-                Ihr künftiges Zuhause soll ein Ort sein, an dem Sie zur Ruhe kommen 
-                und neue Kraft schöpfen können.
+                Ob Gartenwohnung oder Maisonette: Jede Einheit ist so geplant, dass sie Alltagstauglichkeit 
+                und Komfort verbindet – mit klarer Materialität und flexiblen Grundrissen.
               </p>
             </div>
 
             {/* Key Facts */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
               <div>
-                <span className="font-display text-4xl text-primary">12</span>
+                <span className="font-display text-4xl text-primary">{project.objectCount}</span>
                 <p className="font-body text-sm text-muted-foreground mt-1">Wohneinheiten</p>
               </div>
               <div>
-                <span className="font-display text-4xl text-primary">65–180</span>
+                <span className="font-display text-4xl text-primary">93–183</span>
                 <p className="font-body text-sm text-muted-foreground mt-1">m² Wohnfläche</p>
               </div>
               <div>
-                <span className="font-display text-4xl text-primary">2026</span>
-                <p className="font-body text-sm text-muted-foreground mt-1">Bezugsfertig</p>
+                <span className="font-display text-4xl text-primary">Rhein</span>
+                <p className="font-body text-sm text-muted-foreground mt-1">Lage Meerbusch</p>
               </div>
             </div>
           </div>
@@ -55,8 +57,8 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-[4/5] rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Moderne Architektur"
+                src="/assets/units/we1-1.jpg"
+                alt="Innenraum Gartenresidenz am Denkmal"
                 className="w-full h-full object-cover"
               />
             </div>

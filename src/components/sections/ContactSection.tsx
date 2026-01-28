@@ -6,10 +6,16 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import type { Company } from "@/types";
+import { realEstateObjects } from "@/data/projectData";
 
-const ContactSection = () => {
+interface ContactSectionProps {
+  company: Company;
+}
+
+const ContactSection = ({ company }: ContactSectionProps) => {
   const { toast } = useToast();
+  const apartmentOptions = realEstateObjects.map((apt) => ({ value: apt.id, label: apt.title }));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -21,25 +27,22 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.apartment_interest) {
+      toast({
+        title: "Bitte wählen Sie eine Wohnung",
+        description: "Wählen Sie die Einheit, für die Sie sich interessieren.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Save to database
-      const { error: dbError } = await supabase
-        .from("contact_inquiries")
-        .insert([formData]);
-
-      if (dbError) throw dbError;
-
-      // Send email notification
-      const { error: emailError } = await supabase.functions.invoke("send-contact-notification", {
-        body: formData,
-      });
-
-      if (emailError) {
-        console.error("Email notification failed:", emailError);
-        // Don't throw - the inquiry was saved, just notify
-      }
+      // TODO: E-Mail Versand konfigurieren (z.B. /api/contact oder externer Mail-Dienst)
+      console.log("Form submitted:", formData);
+      await new Promise(resolve => setTimeout(resolve, 800));
 
       toast({
         title: "Anfrage gesendet",
@@ -82,9 +85,8 @@ const ContactSection = () => {
             </div>
 
             <p className="font-body text-muted-foreground leading-relaxed text-lg">
-              Haben Sie Fragen zu unserem Projekt oder möchten Sie einen 
-              Besichtigungstermin vereinbaren? Unser Team steht Ihnen 
-              jederzeit zur Verfügung.
+              Fragen zur Gartenresidenz am Denkmal oder Wunsch nach Exposé/Besichtigung? 
+              Unser Team hilft gern weiter.
             </p>
 
             {/* Contact Details */}
@@ -96,7 +98,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-body font-medium text-foreground">Telefon</h4>
                   <p className="font-body text-muted-foreground mt-1">
-                    +49 89 123 456 78
+                    +49 (0) 2132 13 69 0
                   </p>
                 </div>
               </div>
@@ -107,9 +109,19 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-body font-medium text-foreground">E-Mail</h4>
-                  <p className="font-body text-muted-foreground mt-1">
-                    info@residenz-parkblick.de
-                  </p>
+                  <a
+                    href="mailto:lars.gronowski@fohrer-immobilien.de"
+                    className="font-body text-muted-foreground mt-1 inline-block hover:text-primary transition-colors"
+                  >
+                    info@fohrer-immobilien.de
+                  </a>
+                  <br></br>
+                  <a
+                    href="mailto:lars.gronowski@fohrer-immobilien.de"
+                    className="font-body text-muted-foreground mt-1 inline-block hover:text-primary transition-colors"
+                  >
+                    lars.gronowski@fohrer-immobilien.de
+                  </a>
                 </div>
               </div>
 
@@ -118,10 +130,10 @@ const ContactSection = () => {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-body font-medium text-foreground">Verkaufsbüro</h4>
+                  <h4 className="font-body font-medium text-foreground">Niederlassung Meerbusch</h4>
                   <p className="font-body text-muted-foreground mt-1">
-                    Ismaninger Straße 140<br />
-                    81675 München
+                    Düsseldorfer Str. 33 <br />
+                    40667 Meerbusch
                   </p>
                 </div>
               </div>
@@ -133,7 +145,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-body font-medium text-foreground">Öffnungszeiten</h4>
                   <p className="font-body text-muted-foreground mt-1">
-                    Mo–Fr: 09:00–18:00 Uhr<br />
+                    Mo–Fr: 09:00–17:30 Uhr<br />
                     Sa: nach Vereinbarung
                   </p>
                 </div>
@@ -196,10 +208,9 @@ const ContactSection = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="general">Allgemeine Informationen</SelectItem>
-                      <SelectItem value="2-zimmer">2-Zimmer-Wohnung</SelectItem>
-                      <SelectItem value="3-zimmer">3-Zimmer-Wohnung</SelectItem>
-                      <SelectItem value="4-zimmer">4-Zimmer-Wohnung</SelectItem>
-                      <SelectItem value="5-zimmer">5-Zimmer / Penthouse</SelectItem>
+                      {apartmentOptions.map((apt) => (
+                        <SelectItem key={apt.value} value={apt.value}>{apt.label}</SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>

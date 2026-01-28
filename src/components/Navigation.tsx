@@ -50,7 +50,7 @@ const Navigation = () => {
               isScrolled ? "text-foreground" : "text-white"
             }`}
           >
-            Residenz am Parkblick
+            Gartenresidenz am Denkmal
           </a>
 
           {/* Desktop Navigation */}

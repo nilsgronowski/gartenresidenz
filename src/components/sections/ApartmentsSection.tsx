@@ -1,6 +1,11 @@
 import ApartmentCard from "@/components/ApartmentCard";
+import type { RealEstateObject } from "@/types";
 
-const apartments = [
+interface ApartmentsSectionProps {
+  apartments: RealEstateObject[];
+}
+
+const localApartments = [
   {
     id: 1,
     name: "Wohnung A1",
@@ -75,7 +80,23 @@ const apartments = [
   },
 ];
 
-const ApartmentsSection = () => {
+const ApartmentsSection = ({ apartments }: ApartmentsSectionProps) => {
+  // Adapter: Convert RealEstateObject to ApartmentCard format
+  const adaptedApartments = apartments.length > 0 
+    ? apartments.map((apt) => ({
+        id: parseInt(apt.id) || 0,
+        name: apt.title,
+        type: `${apt.rooms}-Zimmer`,
+        size: apt.size,
+        floor: apt.floor || 'N/A',
+        rooms: apt.rooms,
+        features: apt.features || [],
+        status: apt.status || 'available' as const,
+        price: apt.price ? `ab ${apt.price.toLocaleString('de-DE')} €` : 'Preis auf Anfrage',
+        image: apt.images[0] || 'https://images.unsplash.com/photo-1502672260066-6bc232f9ed10',
+      }))
+    : localApartments;
+  
   return (
     <section id="apartments" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -95,7 +116,7 @@ const ApartmentsSection = () => {
 
         {/* Apartments Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {apartments.map((apartment) => (
+          {adaptedApartments.map((apartment) => (
             <ApartmentCard key={apartment.id} apartment={apartment} />
           ))}
         </div>

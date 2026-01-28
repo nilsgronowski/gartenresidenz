@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#b07642"/>
+  <g fill="#f2e6d8">
+    <!-- Haus-Symbol -->
+    <path d="M50 25 L25 45 L25 70 L45 70 L45 55 L55 55 L55 70 L75 70 L75 45 Z"/>
+    <rect x="30" y="50" width="10" height="10"/>
+    <rect x="60" y="50" width="10" height="10"/>
+    <!-- Baum/Garten -->
+    <circle cx="20" cy="80" r="8"/>
+    <rect x="18" y="80" width="4" height="10" fill="#8a5a2e"/>
+    <circle cx="80" cy="80" r="8"/>
+    <rect x="78" y="80" width="4" height="10" fill="#8a5a2e"/>
+  </g>
+</svg>

@@ -1,0 +1,116 @@
+Copilot Instructions – Modular React Onepage (Exposé)
+
+Projektkontext
+Dieses Projekt ist eine modulare React Onepage Application zur Darstellung eines Immobilien- oder Projekt-Exposés.
+
+Ziel
+• Klare, wiederverwendbare Sektionen
+• Datengetriebene Komponenten
+• Saubere Trennung von Layout, Logik und Daten
+• Keine unnötige Komplexität
+
+Technologie
+• React mit TypeScript
+• Single Page Application
+• Funktionale Komponenten und Hooks
+• Moderne React Patterns
+• CSS bevorzugt über CSS Modules oder Tailwind
+• Keine Inline-Styles
+
+Architektur-Grundsätze
+• Jede Seiten-Sektion ist eine eigene React-Komponente
+• Komponenten werden über Props konfiguriert
+• Texte und Bilder sind nicht hart im Code verdrahtet
+• Datenstrukturen sind klar typisiert
+• Keine Business-Logik im JSX
+
+Empfohlene Ordnerstruktur
+
+/components
+/sections
+Header.tsx
+HeroSection.tsx
+InfoSection.tsx
+ObjectSlider.tsx
+CompanyBanner.tsx
+ContactForm.tsx
+Footer.tsx
+/ui
+Button.tsx
+Modal.tsx
+Slider.tsx
+Input.tsx
+/types
+/data
+
+Datenmodelle
+
+Projekt
+Interface Project
+• name: string
+• location: string
+• objectCount: number
+• description optional
+
+Objekt
+Interface RealEstateObject
+• id: string
+• title: string
+• rooms: number
+• size: number
+• price optional
+• images: string array
+
+Unternehmen
+Interface Company
+• name: string
+• logo: string
+• url optional
+
+Komponenten-Richtlinien
+
+Allgemein
+• Kleine, fokussierte Komponenten schreiben
+• Early Returns statt tiefer Verschachtelung
+• Semantisches HTML verwenden
+• Keine impliziten Abhängigkeiten
+
+Props
+• Props immer typisieren
+• Keine Verwendung von any
+• Optionalität explizit kennzeichnen
+
+State
+• So wenig State wie möglich
+• Lokaler State bleibt lokal
+• Modals und Slider States klar benennen
+
+UX und Verhalten
+• Call-to-Actions scrollen zu Sektionen oder öffnen Modals
+• Objekt-Exposé wird in einem Modal angefragt
+• Kontaktformular enthält
+• Clientseitige Validierung
+• Klar definierte Pflichtfelder
+• DSGVO-Checkbox als Pflichtfeld
+
+Was Copilot tun soll
+• Komponenten vollständig ausformulieren
+• TypeScript Interfaces selbstständig vorschlagen
+• Sauberen, gut lesbaren Code schreiben
+• Wiederverwendbare Patterns erkennen
+
+Was Copilot nicht tun soll
+• Kein Redux, MobX oder globale State-Lösungen vorschlagen
+• Keine unnötigen Abstraktionen
+• Keine Klassen-Komponenten
+• Keine zusätzlichen Libraries ohne Aufforderung
+
+Stil und Codequalität
+• Klarer, nüchterner Code
+• Verständliche, sprechende Namen
+• Sinnvolle Default-Werte
+• Kommentare nur bei nicht offensichtlicher Logik
+
+Ziel
+
+Ein wartbares, erweiterbares React-Projekt, das sich für weitere Exposé- und Projektseiten wiederverwenden lässt.

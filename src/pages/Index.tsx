@@ -7,21 +7,22 @@ import ApartmentsSection from "@/components/sections/ApartmentsSection";
 import GallerySection from "@/components/sections/GallerySection";
 import ContactSection from "@/components/sections/ContactSection";
 import FooterSection from "@/components/sections/FooterSection";
+import { project, realEstateObjects, company } from "@/data/projectData";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <HeroSection />
+        <HeroSection project={project} />
         <HighlightsSection />
-        <AboutSection />
-        <LocationSection />
-        <ApartmentsSection />
+        <AboutSection project={project} />
+        <LocationSection location={project.location} />
+        <ApartmentsSection apartments={realEstateObjects} />
         <GallerySection />
-        <ContactSection />
+        <ContactSection company={company} />
       </main>
-      <FooterSection />
+      <FooterSection company={company} />
     </div>
   );
 };

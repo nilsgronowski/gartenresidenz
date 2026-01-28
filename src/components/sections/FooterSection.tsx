@@ -1,4 +1,10 @@
-const FooterSection = () => {
+import type { Company } from "@/types";
+
+interface FooterSectionProps {
+  company: Company;
+}
+
+const FooterSection = ({ company }: FooterSectionProps) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -8,11 +14,10 @@ const FooterSection = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3 className="font-display text-3xl text-white mb-4">
-              Residenz am Parkblick
+              Gartenresidenz am Denkmal
             </h3>
             <p className="font-body text-white/60 leading-relaxed max-w-md">
-              Exklusives Wohnen in München-Bogenhausen. 
-              12 hochwertige Eigentumswohnungen in bester Lage.
+              Acht Eigentumswohnungen in Rheinlage Meerbusch – Wohnen zwischen Garten und Geschichte.
             </p>
           </div>
 
@@ -52,11 +57,23 @@ const FooterSection = () => {
           <div>
             <h4 className="font-display text-xl text-white mb-4">Kontakt</h4>
             <div className="space-y-3 font-body">
-              <p>Mustermann Immobilien GmbH</p>
-              <p>Ismaninger Straße 140</p>
-              <p>81675 München</p>
-              <p className="pt-2">+49 89 123 456 78</p>
-              <p>info@residenz-parkblick.de</p>
+              <p>Gartenresidenz am Denkmal</p>
+              <p>Düsseldorfer Str. 33</p>
+              <p>40667 Meerbusch</p>
+              <p className="pt-2">+49 (0) 2132 13 69 0</p>
+              <a
+                    href="mailto:lars.gronowski@fohrer-immobilien.de"
+                    className="font-body text-muted-foreground mt-1 inline-block hover:text-primary transition-colors"
+                  >
+                    info@fohrer-immobilien.de
+                  </a>
+                  <br></br>
+                  <a
+                    href="mailto:lars.gronowski@fohrer-immobilien.de"
+                    className="font-body text-muted-foreground mt-1 inline-block hover:text-primary transition-colors"
+                  >
+                    lars.gronowski@fohrer-immobilien.de
+                  </a>
             </div>
           </div>
         </div>
@@ -65,16 +82,16 @@ const FooterSection = () => {
         <div className="border-t border-white/10 mt-12 pt-8 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-body text-sm text-white/40">
-              © {currentYear} Residenz am Parkblick. Alle Rechte vorbehalten.
+              © {currentYear} Fohrer Select Immobilien GmbH. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-6 font-body text-sm">
-              <a href="#" className="text-white/40 hover:text-white/60 transition-colors">
+              <a href="/impressum" className="text-white/40 hover:text-white/60 transition-colors">
                 Impressum
               </a>
-              <a href="#" className="text-white/40 hover:text-white/60 transition-colors">
+              <a href="/datenschutz" className="text-white/40 hover:text-white/60 transition-colors">
                 Datenschutz
               </a>
-              <a href="#" className="text-white/40 hover:text-white/60 transition-colors">
+              <a href="/agb" className="text-white/40 hover:text-white/60 transition-colors">
                 AGB
               </a>
             </div>

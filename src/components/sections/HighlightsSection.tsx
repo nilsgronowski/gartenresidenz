@@ -3,33 +3,33 @@ import { Home, MapPin, Calendar, Leaf, Shield, Sparkles } from "lucide-react";
 const highlights = [
   {
     icon: Home,
-    title: "12 Wohneinheiten",
-    description: "Großzügige 2- bis 5-Zimmer-Wohnungen von 65 bis 180 m²",
+    title: "8 Wohneinheiten",
+    description: "3- bis 4-Zimmer-Wohnungen von ca. 93 bis 183 m²",
   },
   {
     icon: MapPin,
-    title: "Premium-Lage",
-    description: "Ruhige Parkrandlage im Herzen von Bogenhausen",
+    title: "Rheinlage Meerbusch",
+    description: "Ruhige Lage zwischen Büderich und Düsseldorf-Oberkassel",
   },
   {
     icon: Calendar,
-    title: "Fertigstellung 2026",
-    description: "Bezugsfertig im Frühjahr 2026",
+    title: "Bezugsfertig nach Vereinbarung",
+    description: "Projekt im Ausbau – individuelle Abstimmung möglich",
   },
   {
     icon: Leaf,
     title: "Nachhaltig",
-    description: "KfW-40 Standard mit Geothermie und Photovoltaik",
+    description: "Energieeffiziente Planung mit Fokus auf Komfort",
   },
   {
     icon: Shield,
     title: "Hochwertig",
-    description: "Erstklassige Materialien und Markenausstattung",
+    description: "Helle Materialien, bodentiefe Fenster, klare Linien",
   },
   {
     icon: Sparkles,
     title: "Individuell",
-    description: "Flexible Grundrisse nach Ihren Wünschen",
+    description: "Flexibel planbare Grundrisse und Ausstattungspakete",
   },
 ];
 

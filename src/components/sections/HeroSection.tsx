@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import type { Project } from "@/types";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  project: Project;
+}
+
+const HeroSection = ({ project }: HeroSectionProps) => {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     element?.scrollIntoView({ behavior: "smooth" });
@@ -18,10 +23,10 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80')`,
+          backgroundImage: "url('/assets/units/we7-1.jpeg')",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 via-charcoal/20 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/65 via-charcoal/55 to-background/92" />
       </div>
 
       {/* Content */}
@@ -30,20 +35,18 @@ const HeroSection = () => {
           {/* Location Tag */}
           <div className="inline-block">
             <span className="text-sm font-body uppercase tracking-[0.3em] text-primary-foreground/80 bg-primary/80 px-6 py-2 rounded-full">
-              München · Bogenhausen
+              {project.location}
             </span>
           </div>
 
           {/* Project Name */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground font-medium leading-tight">
-            Residenz am<br />
-            <span className="italic">Parkblick</span>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white font-medium leading-tight drop-shadow-md">
+            {project.name}
           </h1>
 
           {/* Tagline */}
-          <p className="font-body text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            Exklusives Wohnen in einer der begehrtesten Lagen Münchens. 
-            12 Eigentumswohnungen verbinden zeitlose Architektur mit höchstem Wohnkomfort.
+          <p className="font-body text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+            Wohnen zwischen Garten und Geschichte. {project.objectCount} Eigentumswohnungen in Rheinlage von Meerbusch.
           </p>
 
           {/* CTAs */}
@@ -59,7 +62,7 @@ const HeroSection = () => {
               onClick={scrollToApartments}
               variant="outline"
               size="lg"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base font-body tracking-wide"
+              className="border-transparent text-[#8a5a2e] bg-[#f2e6d8]/90 hover:bg-[#e9dccd] px-8 py-6 text-base font-body tracking-wide shadow-sm"
             >
               Wohnungen entdecken
             </Button>
