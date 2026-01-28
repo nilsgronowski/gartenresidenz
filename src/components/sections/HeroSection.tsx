@@ -46,7 +46,7 @@ const HeroSection = ({ project }: HeroSectionProps) => {
 
           {/* Tagline */}
           <p className="font-body text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
-            Wohnen zwischen Garten und Geschichte. {project.objectCount} Eigentumswohnungen in Rheinlage von Meerbusch.
+            Wohnen zwischen Garten und Geschichte. <br /> {project.objectCount} Eigentumswohnungen in Rheinlage von Meerbusch.
           </p>
 
           {/* CTAs */}
