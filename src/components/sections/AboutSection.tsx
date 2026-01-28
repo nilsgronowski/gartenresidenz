@@ -24,7 +24,7 @@ const AboutSection = ({ project }: AboutSectionProps) => {
             <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
               <p>
                 Die Gartenresidenz am Denkmal vereint historische Substanz mit moderner Wohnqualität. 
-                Acht Eigentumswohnungen mit großzügigen Grundrissen öffnen sich zu Gärten und Terrassen.
+                Acht Eigentumswohnungen mit großzügigen Grundrissen öffnen sich zu Gärten / Terrassen und Balkone.
               </p>
               <p>
                 Innen sorgen helle Räume, bodentiefe Fenster und hochwertige Materialien für eine ruhige, 
@@ -47,8 +47,8 @@ const AboutSection = ({ project }: AboutSectionProps) => {
                 <p className="font-body text-sm text-muted-foreground mt-1">m² Wohnfläche</p>
               </div>
               <div>
-                <span className="font-display text-4xl text-primary">Rhein</span>
-                <p className="font-body text-sm text-muted-foreground mt-1">Lage Meerbusch</p>
+                <span className="font-display text-4xl text-primary">Meerbusch</span>
+                <p className="font-body text-sm text-muted-foreground mt-1">Rheinnähe</p>
               </div>
             </div>
           </div>

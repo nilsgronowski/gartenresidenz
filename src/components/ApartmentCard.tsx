@@ -61,14 +61,14 @@ const ApartmentCard = ({ apartment }: ApartmentCardProps) => {
       {/* Content */}
       <div className="p-6 space-y-4">
         {/* Header */}
-        <div className="flex justify-between items-start">
-          <div>
+        <div className="flex justify-between items-start gap-4">
+          <div className="flex-1 min-w-0">
             <h3 className="font-display text-2xl text-foreground">
               {apartment.name}
             </h3>
             <p className="font-body text-muted-foreground">{apartment.type}</p>
           </div>
-          <span className="font-display text-xl text-primary font-medium">
+          <span className="font-display text-xl text-primary font-medium whitespace-pre-line text-right flex-shrink-0">
             {apartment.price}
           </span>
         </div>

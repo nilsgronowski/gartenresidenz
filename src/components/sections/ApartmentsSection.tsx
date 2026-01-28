@@ -15,7 +15,7 @@ const localApartments = [
     rooms: 2,
     features: ["Terrasse", "Gartenzugang", "Einbauküche"],
     status: "available" as const,
-    price: "ab 495.000 €",
+    price: "Festpreis 495.000 €",
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -27,7 +27,7 @@ const localApartments = [
     rooms: 3,
     features: ["Balkon", "Parkettboden", "Fußbodenheizung"],
     status: "available" as const,
-    price: "ab 685.000 €",
+    price: "Festpreis 685.000 €",
     image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -39,7 +39,7 @@ const localApartments = [
     rooms: 3,
     features: ["Loggia", "2 Bäder", "Abstellraum"],
     status: "reserved" as const,
-    price: "ab 745.000 €",
+    price: "Festpreis 745.000 €",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -51,7 +51,7 @@ const localApartments = [
     rooms: 4,
     features: ["Süd-Balkon", "Master-Suite", "Gäste-WC"],
     status: "available" as const,
-    price: "ab 965.000 €",
+    price: "Festpreis 965.000 €",
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -63,7 +63,7 @@ const localApartments = [
     rooms: 5,
     features: ["Dachterrasse", "Kamin", "Panoramablick"],
     status: "available" as const,
-    price: "ab 1.850.000 €",
+    price: "Festpreis 1.850.000 €",
     image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -74,8 +74,8 @@ const localApartments = [
     floor: "1. Obergeschoss",
     rooms: 4,
     features: ["Westbalkon", "Ankleide", "Smart Home"],
-    status: "sold" as const,
-    price: "Verkauft",
+    status: "available" as const,
+    price: "Festpreis 1.150.000 €",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
 ];
@@ -92,7 +92,7 @@ const ApartmentsSection = ({ apartments }: ApartmentsSectionProps) => {
         rooms: apt.rooms,
         features: apt.features || [],
         status: apt.status || 'available' as const,
-        price: apt.price ? `ab ${apt.price.toLocaleString('de-DE')} €` : 'Preis auf Anfrage',
+        price: apt.price ? `Festpreis\n${apt.price.toLocaleString('de-DE')} €` : 'Preis auf Anfrage',
         image: apt.images[0] || 'https://images.unsplash.com/photo-1502672260066-6bc232f9ed10',
       }))
     : localApartments;

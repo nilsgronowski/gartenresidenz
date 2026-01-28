@@ -153,7 +153,8 @@ const ContactSection = ({ company }: ContactSectionProps) => {
                 <div>
                   <h4 className="font-body font-medium text-foreground">Öffnungszeiten</h4>
                   <p className="font-body text-muted-foreground mt-1">
-                    Mo–Fr: 09:00–17:30 Uhr<br />
+                    Mo–Do: 09:00–17:30 Uhr<br />
+                    Fr: 09:00–16:30 Uhr<br />
                     Sa: nach Vereinbarung
                   </p>
                 </div>
@@ -188,7 +189,7 @@ const ContactSection = ({ company }: ContactSectionProps) => {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="ihre@email.de"
+                    placeholder="Ihre@email.de"
                     className="font-body"
                   />
                 </div>

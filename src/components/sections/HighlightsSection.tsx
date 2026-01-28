@@ -4,7 +4,7 @@ const highlights = [
   {
     icon: Home,
     title: "8 Wohneinheiten",
-    description: "3- bis 4-Zimmer-Wohnungen von ca. 93 bis 183 m²",
+    description: "3- bis 4-Zimmer-Wohnungen von ca. 93 m² bis 183 m²",
   },
   {
     icon: MapPin,

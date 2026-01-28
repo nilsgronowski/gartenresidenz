@@ -22,7 +22,7 @@ const locationFeatures = [
   },
   {
     icon: GraduationCap,
-    title: "Schulen",
+    title: "Schulen / Kitas",
     description: "Kitas, Grund- und weiterführende Schulen im nahen Umfeld",
   },
   {
