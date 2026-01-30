@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
@@ -137,6 +137,14 @@ const previewImages = galleryImages.slice(0, 6);
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  // Preload all gallery images on mount
+  useEffect(() => {
+    galleryImages.forEach((img) => {
+      const preloadImg = new window.Image();
+      preloadImg.src = img.src;
+    });
+  }, []);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
