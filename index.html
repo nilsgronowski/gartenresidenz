@@ -22,6 +22,25 @@
 
   <body>
     <div id="root"></div>
+
+    <!-- Hidden Netlify form for static form detection -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      style="display: none;"
+      aria-hidden="true"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="apartment_interest" />
+      <textarea name="message"></textarea>
+    </form>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
