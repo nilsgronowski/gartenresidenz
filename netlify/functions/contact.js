@@ -1,8 +1,27 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY || "");
 const CONTACT_TO = process.env.CONTACT_TO || "info@fohrer-immobilien.de";
 const CONTACT_FROM = process.env.CONTACT_FROM || "Gartenresidenz <noreply@example.com>";
+
+const transporter = nodemailer.createTransport(
+  process.env.SMTP_HOST
+    ? {
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT || 25),
+        secure: Number(process.env.SMTP_PORT) === 465,
+        auth: process.env.SMTP_USER
+          ? {
+              user: process.env.SMTP_USER,
+              pass: process.env.SMTP_PASS,
+            }
+          : undefined,
+      }
+    : {
+        sendmail: true,
+        newline: "unix",
+        path: process.env.SENDMAIL_PATH || "/usr/sbin/sendmail",
+      }
+);
 
 export const handler = async (event) => {
   console.log("Function called, method:", event.httpMethod);
@@ -26,14 +45,6 @@ export const handler = async (event) => {
     };
   }
 
-  if (!process.env.RESEND_API_KEY) {
-    console.error("RESEND_API_KEY missing!");
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "missing_resend_key" }),
-    };
-  }
-
   const apartment = apartment_interest && apartment_interest !== "general"
     ? apartment_interest
     : "Allgemeine Informationen";
@@ -51,9 +62,9 @@ export const handler = async (event) => {
   console.log("Sending email to:", CONTACT_TO, "from:", CONTACT_FROM);
 
   try {
-    const result = await resend.emails.send({
+    const result = await transporter.sendMail({
       from: CONTACT_FROM,
-      to: [CONTACT_TO],
+      to: CONTACT_TO,
       replyTo: email,
       subject: `Neue Anfrage - ${apartment}`,
       text,
@@ -66,7 +77,7 @@ export const handler = async (event) => {
       body: JSON.stringify({ ok: true }),
     };
   } catch (error) {
-    console.error("Resend send error:", error);
+    console.error("Email send error:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "send_failed", details: error.message }),

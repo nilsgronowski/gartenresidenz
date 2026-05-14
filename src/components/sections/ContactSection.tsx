@@ -25,6 +25,11 @@ const ContactSection = ({ company }: ContactSectionProps) => {
     message: "",
   });
 
+  const encodeForm = (data: Record<string, string>) =>
+    Object.keys(data)
+      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join("&");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -40,12 +45,15 @@ const ContactSection = ({ company }: ContactSectionProps) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify(formData),
+        body: encodeForm({
+          "form-name": "contact",
+          ...formData,
+        }),
       });
 
       if (!response.ok) {
@@ -168,12 +176,24 @@ const ContactSection = ({ company }: ContactSectionProps) => {
               Anfrage senden
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="apartment_interest" value={formData.apartment_interest} />
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="font-body">Name *</Label>
                   <Input
                     id="name"
+                    name="name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -185,6 +205,7 @@ const ContactSection = ({ company }: ContactSectionProps) => {
                   <Label htmlFor="email" className="font-body">E-Mail *</Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
                     value={formData.email}
@@ -200,6 +221,7 @@ const ContactSection = ({ company }: ContactSectionProps) => {
                   <Label htmlFor="phone" className="font-body">Telefon</Label>
                   <Input
                     id="phone"
+                    name="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+49 ..."
@@ -229,6 +251,7 @@ const ContactSection = ({ company }: ContactSectionProps) => {
                 <Label htmlFor="message" className="font-body">Nachricht</Label>
                 <Textarea
                   id="message"
+                  name="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Ihre Nachricht oder Fragen..."
